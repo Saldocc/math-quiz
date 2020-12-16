@@ -256,12 +256,13 @@ function populateGamePage() {
 function countdownStart() {
   let count = 3;
   countdown.textContent = count;
-  setInterval(() => {
+  const timeCountDown = setInterval(() => {
     count--;
     if (count === 0) {
-      countdown.textContent = "Go!";
+      countdown.textContent = 'GO!';
     } else if (count === -1) {
       showGamePage();
+      clearInterval(timeCountDown);
     } else {
       countdown.textContent = count;
     }
